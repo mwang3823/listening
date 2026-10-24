@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiếng Anh 10 - Unit 3: Music (Listening Player)</title>
+  <meta name="description" content="Trình phát âm thanh tương tác bài nghe Unit 3 Music - Tiếng Anh 10 Global Success dùng nhúng Canva">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top App Bar -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="unit-badge">Unit 3: Music</div>
+        <h1 class="lesson-title">Listening: An International Youth Music Festival</h1>
+        <p class="lesson-subtitle">Trang 33 • Tiếng Anh 10 Global Success (Track 21 & 22)</p>
+      </div>
+      <div class="header-controls">
+        <div class="speed-control" title="Tốc độ phát">
+          <span class="control-label">Tốc độ:</span>
+          <div class="speed-buttons">
+            <button class="btn-speed" data-speed="0.8" id="speed-08">0.8x</button>
+            <button class="btn-speed active" data-speed="1.0" id="speed-10">1.0x</button>
+            <button class="btn-speed" data-speed="1.2" id="speed-12">1.2x</button>
+          </div>
+        </div>
+        <button class="btn-toggle-answers" id="toggle-all-answers" title="Bật/Tắt đáp án">
+          <span class="icon">👁️</span> <span id="toggle-answers-text">Hiện đáp án</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs" role="tablist">
+      <button class="tab-btn active" data-tab="tab-bai-3" id="tab-btn-bai-3" role="tab" aria-selected="true">
+        <span class="tab-num">Bài 3</span>
+        <span class="tab-desc">True (T) or False (F)</span>
+        <span class="tab-badge">5 câu</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-bai-2" id="tab-btn-bai-2" role="tab" aria-selected="false">
+        <span class="tab-num">Bài 2</span>
+        <span class="tab-desc">Tick (✓) Information</span>
+        <span class="tab-badge">4 mục</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-transcript" id="tab-btn-transcript" role="tab" aria-selected="false">
+        <span class="tab-num">Toàn bài</span>
+        <span class="tab-desc">Hội thoại & Lời dịch</span>
+        <span class="tab-badge">Full</span>
+      </button>
+    </nav>
+
+    <!-- Tab 1: Bài 3 (True or False) -->
+    <section class="tab-panel active" id="tab-bai-3" role="tabpanel">
+      <div class="panel-header">
+        <div class="instruction-box">
+          <span class="inst-tag">Track 22</span>
+          <p class="inst-text"><strong>Activity 3:</strong> Listen again and decide whether the following statements are <strong>true (T)</strong> or <strong>false (F)</strong>.</p>
+        </div>
+        <button class="btn-master-play" data-src="audio/bai3_full.mp3" data-title="Bài 3: Toàn bộ bài nghe (Track 22)" id="play-bai3-full">
+          <span class="play-icon">▶</span>
+          <span>Nghe lại toàn bài (1:15)</span>
+        </button>
+      </div>
+
+      <div class="questions-list">
+        <!-- Câu 1 -->
+        <article class="question-card" id="card-q1">
+          <div class="card-top">
+            <span class="q-number">Câu 1</span>
+            <div class="q-statement">
+              This is the first International Youth Music Festival.
+            </div>
+            <div class="quiz-actions">
+              <button class="btn-choice btn-t" data-choice="T" data-correct="F" data-card="card-q1">T</button>
+              <button class="btn-choice btn-f" data-choice="F" data-correct="F" data-card="card-q1">F</button>
+            </div>
+          </div>
+
+          <div class="card-audio-row">
+            <button class="btn-play-audio" data-src="audio/bai3_q1.mp3" data-title="Câu 1: Đoạn dẫn chứng" id="btn-audio-q1">
+              <span class="audio-btn-icon">▶</span>
+              <span class="audio-btn-text">Nghe đoạn câu 1</span>
+              <span class="audio-duration">0:11</span>
+            </button>
+            <div class="equalizer" id="eq-q1">
+              <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <button class="btn-reveal-card" data-target="ans-q1">Xem lời thoại & Đáp án ▾</button>
+          </div>
+
+          <div class="answer-drawer hidden" id="ans-q1">
+            <div class="answer-badge badge-false">Đáp án: FALSE (F)</div>
+            <div class="evidence-box">
+              <p class="quote-en"><strong>Tam:</strong> "Hi, this is Tam at the site of the <mark>second</mark> International Youth Music Festival."</p>
+              <p class="quote-vi"><strong>Dịch:</strong> <em>"Xin chào, đây là Tâm tại địa điểm diễn ra Lễ hội Âm nhạc Thanh niên Quốc tế lần thứ hai."</em></p>
+              <p class="quote-note">💡 <strong>Giải thích:</strong> Đây là lần thứ hai (second) tổ chức lễ hội, không phải lần đầu tiên (first).</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Câu 2 -->
+        <article class="question-card" id="card-q2">
+          <div class="card-top">
+            <span class="q-number">Câu 2</span>
+            <div class="q-statement">
+              The organisers have finished preparations for the festival.
+            </div>
+            <div class="quiz-actions">
+              <button class="btn-choice btn-t" data-choice="T" data-correct="F" data-card="card-q2">T</button>
+              <button class="btn-choice btn-f" data-choice="F" data-correct="F" data-card="card-q2">F</button>
+            </div>
+          </div>
+
+          <div class="card-audio-row">
+            <button class="btn-play-audio" data-src="audio/bai3_q2.mp3" data-title="Câu 2: Đoạn dẫn chứng" id="btn-audio-q2">
+              <span class="audio-btn-icon">▶</span>
+              <span class="audio-btn-text">Nghe đoạn câu 2</span>
+              <span class="audio-duration">0:16</span>
+            </button>
+            <div class="equalizer" id="eq-q2">
+              <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <button class="btn-reveal-card" data-target="ans-q2">Xem lời thoại & Đáp án ▾</button>
+          </div>
+
+          <div class="answer-drawer hidden" id="ans-q2">
+            <div class="answer-badge badge-false">Đáp án: FALSE (F)</div>
+            <div class="evidence-box">
+              <p class="quote-en"><strong>Jack:</strong> "Hi, we're very busy. We're <mark>still setting up</mark> the main stage and there's <mark>still a lot to do</mark>, but we want to get it ready by tomorrow..."</p>
+              <p class="quote-vi"><strong>Dịch:</strong> <em>"Chào bạn, chúng tôi đang rất bận rộn. Chúng tôi vẫn đang dựng sân khấu chính và vẫn còn rất nhiều việc phải làm..."</em></p>
+              <p class="quote-note">💡 <strong>Giải thích:</strong> Ban tổ chức vẫn đang dựng sân khấu và còn rất nhiều việc, chưa hoàn thành chuẩn bị.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Câu 3 -->
+        <article class="question-card" id="card-q3">
+          <div class="card-top">
+            <span class="q-number">Câu 3</span>
+            <div class="q-statement">
+              Last year, the festival was held on the beach.
+            </div>
+            <div class="quiz-actions">
+              <button class="btn-choice btn-t" data-choice="T" data-correct="T" data-card="card-q3">T</button>
+              <button class="btn-choice btn-f" data-choice="F" data-correct="T" data-card="card-q3">F</button>
+            </div>
+          </div>
+
+          <div class="card-audio-row">
+            <button class="btn-play-audio" data-src="audio/bai3_q3.mp3" data-title="Câu 3: Đoạn dẫn chứng" id="btn-audio-q3">
+              <span class="audio-btn-icon">▶</span>
+              <span class="audio-btn-text">Nghe đoạn câu 3</span>
+              <span class="audio-duration">0:10</span>
+            </button>
+            <div class="equalizer" id="eq-q3">
+              <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <button class="btn-reveal-card" data-target="ans-q3">Xem lời thoại & Đáp án ▾</button>
+          </div>
+
+          <div class="answer-drawer hidden" id="ans-q3">
+            <div class="answer-badge badge-true">Đáp án: TRUE (T)</div>
+            <div class="evidence-box">
+              <p class="quote-en"><strong>Jack:</strong> "Well, last year the festival <mark>was on the beach</mark> and it was free of charge."</p>
+              <p class="quote-vi"><strong>Dịch:</strong> <em>"À, năm ngoái lễ hội được tổ chức ở bãi biển và hoàn toàn miễn phí."</em></p>
+              <p class="quote-note">💡 <strong>Giải thích:</strong> Thông tin hoàn toàn chính xác với lời của Jack trong phỏng vấn.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Câu 4 -->
+        <article class="question-card" id="card-q4">
+          <div class="card-top">
+            <span class="q-number">Câu 4</span>
+            <div class="q-statement">
+              They are selling tickets for the festival at the park gates.
+            </div>
+            <div class="quiz-actions">
+              <button class="btn-choice btn-t" data-choice="T" data-correct="F" data-card="card-q4">T</button>
+              <button class="btn-choice btn-f" data-choice="F" data-correct="F" data-card="card-q4">F</button>
+            </div>
+          </div>
+
+          <div class="card-audio-row">
+            <button class="btn-play-audio" data-src="audio/bai3_q4.mp3" data-title="Câu 4: Đoạn dẫn chứng" id="btn-audio-q4">
+              <span class="audio-btn-icon">▶</span>
+              <span class="audio-btn-text">Nghe đoạn câu 4</span>
+              <span class="audio-duration">0:06</span>
+            </button>
+            <div class="equalizer" id="eq-q4">
+              <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <button class="btn-reveal-card" data-target="ans-q4">Xem lời thoại & Đáp án ▾</button>
+          </div>
+
+          <div class="answer-drawer hidden" id="ans-q4">
+            <div class="answer-badge badge-false">Đáp án: FALSE (F)</div>
+            <div class="evidence-box">
+              <p class="quote-en"><strong>Jack:</strong> "This year we have sold the tickets <mark>in advance</mark> so that we know how many people are coming."</p>
+              <p class="quote-vi"><strong>Dịch:</strong> <em>"Năm nay chúng tôi đã bán vé từ trước để nắm được lượng người tham gia."</em></p>
+              <p class="quote-note">💡 <strong>Giải thích:</strong> Vé đã được bán từ trước (in advance), không phải đang bán tại cổng công viên (at the park gates).</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Câu 5 -->
+        <article class="question-card" id="card-q5">
+          <div class="card-top">
+            <span class="q-number">Câu 5</span>
+            <div class="q-statement">
+              The country park is far from the town centre.
+            </div>
+            <div class="quiz-actions">
+              <button class="btn-choice btn-t" data-choice="T" data-correct="T" data-card="card-q5">T</button>
+              <button class="btn-choice btn-f" data-choice="F" data-correct="T" data-card="card-q5">F</button>
+            </div>
+          </div>
+
+          <div class="card-audio-row">
+            <button class="btn-play-audio" data-src="audio/bai3_q5.mp3" data-title="Câu 5: Đoạn dẫn chứng" id="btn-audio-q5">
+              <span class="audio-btn-icon">▶</span>
+              <span class="audio-btn-text">Nghe đoạn câu 5</span>
+              <span class="audio-duration">0:12</span>
+            </button>
+            <div class="equalizer" id="eq-q5">
+              <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <button class="btn-reveal-card" data-target="ans-q5">Xem lời thoại & Đáp án ▾</button>
+          </div>
+
+          <div class="answer-drawer hidden" id="ans-q5">
+            <div class="answer-badge badge-true">Đáp án: TRUE (T)</div>
+            <div class="evidence-box">
+              <p class="quote-en"><strong>Tam:</strong> "Why the country park? Isn't it a bit <mark>too far from the town centre</mark>?"<br><strong>Jack:</strong> "<mark>Yeah, that's why we've chosen it.</mark> This location is better for everybody because..."</p>
+              <p class="quote-vi"><strong>Dịch:</strong> <em>"Tại sao lại là công viên ngoại ô? Chẳng phải nó hơi xa trung tâm thị trấn sao? - Đúng vậy, đó chính là lý do chúng tôi chọn nơi này."</em></p>
+              <p class="quote-note">💡 <strong>Giải thích:</strong> Ban tổ chức xác nhận công viên cách xa trung tâm thị trấn và đó chính là lý do họ chọn địa điểm này để tránh quá tải.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Tab 2: Bài 2 (Tick Information) -->
+    <section class="tab-panel" id="tab-bai-2" role="tabpanel">
+      <div class="panel-header">
+        <div class="instruction-box">
+          <span class="inst-tag">Track 21</span>
+          <p class="inst-text"><strong>Activity 2:</strong> Listen to an interview about preparations for an International Youth Music Festival. <strong>Tick (✓)</strong> the information that you hear in the recording.</p>
+        </div>
+        <button class="btn-master-play" data-src="audio/bai2_full.mp3" data-title="Bài 2: Toàn bộ phỏng vấn (Track 21)" id="play-bai2-full">
+          <span class="play-icon">▶</span>
+          <span>Nghe toàn bộ phỏng vấn (1:15)</span>
+        </button>
+      </div>
+
+      <div class="tick-options-grid">
+        <!-- Option A: Location -->
+        <div class="option-item is-correct" id="opt-location">
+          <div class="option-header">
+            <label class="custom-checkbox">
+              <input type="checkbox" id="chk-location">
+              <span class="checkmark"></span>
+              <span class="option-label">A. Location</span>
+            </label>
+            <span class="result-pill pill-heard">Có trong bài nghe (✓)</span>
+          </div>
+          <p class="option-desc">Thông tin về địa điểm: công viên ngoại ô (country park) thay thế cho bãi biển (beach).</p>
+          <div class="option-audio-action">
+            <button class="btn-play-audio mini" data-src="audio/bai2_location.mp3" data-title="Thông tin A: Location">
+              <span class="audio-btn-icon">▶</span>
+              <span>Nghe đoạn nói về Location</span>
+              <span class="audio-duration">0:18</span>
+            </button>
+            <div class="equalizer"><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+          </div>
+          <div class="option-evidence hidden">
+            <em>"What's more important, we've decided to move the festival to this country park... This location is better for everybody because..."</em>
+          </div>
+        </div>
+
+        <!-- Option B: Guests -->
+        <div class="option-item not-mentioned" id="opt-guests">
+          <div class="option-header">
+            <label class="custom-checkbox">
+              <input type="checkbox" id="chk-guests">
+              <span class="checkmark"></span>
+              <span class="option-label">B. Guests</span>
+            </label>
+            <span class="result-pill pill-not-heard">Không đề cập (✗)</span>
+          </div>
+          <p class="option-desc">Trong bài chỉ nhắc tới các ban nhạc (bands) và khách đến (people coming), không nói về khách mời (guests).</p>
+        </div>
+
+        <!-- Option C: Decoration -->
+        <div class="option-item not-mentioned" id="opt-decoration">
+          <div class="option-header">
+            <label class="custom-checkbox">
+              <input type="checkbox" id="chk-decoration">
+              <span class="checkmark"></span>
+              <span class="option-label">C. Decoration</span>
+            </label>
+            <span class="result-pill pill-not-heard">Không đề cập (✗)</span>
+          </div>
+          <p class="option-desc">Trong bài chỉ nhắc dựng sân khấu chính (setting up the main stage), không nhắc trang trí (decoration).</p>
+        </div>
+
+        <!-- Option D: Tickets -->
+        <div class="option-item is-correct" id="opt-tickets">
+          <div class="option-header">
+            <label class="custom-checkbox">
+              <input type="checkbox" id="chk-tickets">
+              <span class="checkmark"></span>
+              <span class="option-label">D. Tickets</span>
+            </label>
+            <span class="result-pill pill-heard">Có trong bài nghe (✓)</span>
+          </div>
+          <p class="option-desc">Thông tin về vé: năm ngoái miễn phí (free of charge), năm nay bán trước (sold tickets in advance).</p>
+          <div class="option-audio-action">
+            <button class="btn-play-audio mini" data-src="audio/bai2_tickets.mp3" data-title="Thông tin D: Tickets">
+              <span class="audio-btn-icon">▶</span>
+              <span>Nghe đoạn nói về Tickets</span>
+              <span class="audio-duration">0:16</span>
+            </button>
+            <div class="equalizer"><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+          </div>
+          <div class="option-evidence hidden">
+            <em>"Well, last year the festival was on the beach and it was free of charge... This year we have sold the tickets in advance so that we know how many people are coming."</em>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 3: Full Transcript & Translation -->
+    <section class="tab-panel" id="tab-transcript" role="tabpanel">
+      <div class="panel-header">
+        <div class="instruction-box">
+          <span class="inst-tag">Script</span>
+          <p class="inst-text">Toàn bộ lời thoại tiếng Anh và bản dịch song ngữ tiếng Việt. Bấm vào nút phát tương ứng để nghe từng đoạn.</p>
+        </div>
+        <button class="btn-master-play" data-src="audio/bai2_full.mp3" data-title="Phỏng vấn trọn vẹn (Tam & Jack)" id="play-dialogue-full">
+          <span class="play-icon">▶</span>
+          <span>Phát toàn bộ bài nghe</span>
+        </button>
+      </div>
+
+      <div class="dialogue-container">
+        <div class="dialogue-turn" data-q="q1">
+          <div class="speaker-tag tam">Tam</div>
+          <div class="speech-content">
+            <p class="speech-en">"Hi, this is Tam at the site of the second International Youth Music Festival. There are just two days to go before the festival opens on Sunday. As you can hear in the background, it's very busy here. I'm with Jack, one of the festival organisers. So Jack, how's it all going?"</p>
+            <p class="speech-vi">Xin chào, đây là Tâm tại địa điểm diễn ra Lễ hội Âm nhạc Thanh niên Quốc tế lần thứ hai. Chỉ còn hai ngày nữa là lễ hội sẽ khai mạc vào Chủ Nhật. Như các bạn có thể nghe thấy ở phía sau, ở đây rất nhộn nhịp. Tôi đang có mặt cùng Jack, một trong những người tổ chức lễ hội. Vậy Jack, mọi việc tiến triển thế nào rồi?</p>
+            <button class="btn-inline-play" data-src="audio/bai3_q1.mp3">▶ Nghe đoạn này</button>
+          </div>
+        </div>
+
+        <div class="dialogue-turn" data-q="q2">
+          <div class="speaker-tag jack">Jack</div>
+          <div class="speech-content">
+            <p class="speech-en">"Hi, we're very busy. We're still setting up the main stage and there's still a lot to do, but we want to get it ready by tomorrow so that the bands can start to practice."</p>
+            <p class="speech-vi">Chào bạn, chúng tôi đang rất bận rộn. Chúng tôi vẫn đang dựng sân khấu chính và vẫn còn rất nhiều việc phải làm, nhưng chúng tôi muốn chuẩn bị xong trước ngày mai để các ban nhạc có thể bắt đầu tập luyện.</p>
+            <button class="btn-inline-play" data-src="audio/bai3_q2.mp3">▶ Nghe đoạn này</button>
+          </div>
+        </div>
+
+        <div class="dialogue-turn">
+          <div class="speaker-tag tam">Tam</div>
+          <div class="speech-content">
+            <p class="speech-en">"I heard that there are some changes to the festival this year. Can you tell us about them?"</p>
+            <p class="speech-vi">Tôi nghe nói năm nay lễ hội có một vài thay đổi. Anh có thể cho chúng tôi biết về những thay đổi đó được không?</p>
+          </div>
+        </div>
+
+        <div class="dialogue-turn" data-q="q3-q4">
+          <div class="speaker-tag jack">Jack</div>
+          <div class="speech-content">
+            <p class="speech-en">"Well, last year the festival was on the beach and it was free of charge. We didn't know it would be so popular and we had problems with overcrowding. This year we have sold the tickets in advance so that we know how many people are coming. What's more important, we've decided to move the festival to this country park."</p>
+            <p class="speech-vi">À, năm ngoái lễ hội được tổ chức ở bãi biển và hoàn toàn miễn phí. Chúng tôi không ngờ nó lại được đón nhận nhiều đến thế và đã gặp vấn đề về tình trạng quá tải. Năm nay chúng tôi đã bán vé từ trước để nắm được lượng người tham gia. Điều quan trọng hơn là chúng tôi đã quyết định chuyển lễ hội đến công viên ngoại ô này.</p>
+            <div class="multi-buttons">
+              <button class="btn-inline-play" data-src="audio/bai3_q3.mp3">▶ Đoạn câu 3 (Beach)</button>
+              <button class="btn-inline-play" data-src="audio/bai3_q4.mp3">▶ Đoạn câu 4 (Tickets)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dialogue-turn">
+          <div class="speaker-tag tam">Tam</div>
+          <div class="speech-content">
+            <p class="speech-en">"Why the country park? Isn't it a bit too far from the town centre?"</p>
+            <p class="speech-vi">Tại sao lại là công viên ngoại ô? Chẳng phải nó hơi xa trung tâm thị trấn sao?</p>
+          </div>
+        </div>
+
+        <div class="dialogue-turn" data-q="q5">
+          <div class="speaker-tag jack">Jack</div>
+          <div class="speech-content">
+            <p class="speech-en">"Yeah, that's why we've chosen it. This location is better for everybody because..."</p>
+            <p class="speech-vi">Đúng vậy, đó chính là lý do chúng tôi chọn nơi này. Địa điểm này tốt hơn cho mọi người vì...</p>
+            <button class="btn-inline-play" data-src="audio/bai3_q5.mp3">▶ Nghe đoạn này</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Floating Sticky Player Bar -->
+    <footer class="floating-player-bar" id="player-bar">
+      <div class="player-bar-inner">
+        <div class="now-playing-info">
+          <div class="pulse-dot"></div>
+          <div class="track-meta">
+            <span class="track-title" id="now-title">Chưa chọn bài nghe</span>
+            <span class="track-status" id="now-status">Sẵn sàng phát</span>
+          </div>
+        </div>
+
+        <div class="player-controls">
+          <button class="ctrl-btn" id="btn-rewind" title="Lùi 3 giây">↺ 3s</button>
+          <button class="ctrl-btn-play" id="btn-master-toggle" title="Phát/Tạm dừng">▶</button>
+          <button class="ctrl-btn" id="btn-forward" title="Tiến 3 giây">3s ↻</button>
+        </div>
+
+        <div class="progress-wrap">
+          <span class="time-label" id="current-time">0:00</span>
+          <div class="progress-bar-container" id="progress-container">
+            <div class="progress-bar-fill" id="progress-fill"></div>
+          </div>
+          <span class="time-label" id="total-duration">0:00</span>
+        </div>
+
+        <div class="volume-wrap">
+          <span class="volume-icon" id="vol-icon">🔊</span>
+          <input type="range" class="volume-slider" id="vol-slider" min="0" max="1" step="0.05" value="1">
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <audio id="global-audio-element" preload="auto"></audio>
+  <script src="app.js"></script>
+</body>
+</html>
